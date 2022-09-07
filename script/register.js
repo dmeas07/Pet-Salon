@@ -1,4 +1,3 @@
-console.log("Registering");
 // object literal
 let petSalon ={
     // attributes
@@ -10,74 +9,65 @@ let petSalon ={
         Street:"Mission Ave.",
         ZipCode:"92105",
     },
-
-    pets:[
-        {
-            name:"Scooby",
-            age:60,
-            gender:"Male",
-            breed:"Dane",
-            service:"Grooming",
-            owners:"Shaggy",
-            phone:"444-444-4444",
-        },
-
-        {
-            name:"Scrappy",
-            age:40,
-            gender:"Male",
-            breed:"mixed",
-            service:"Nail Trim Only",
-            owners:"Shaggy",
-            phone:"444-444-4444",
-        },
-
-        {
-            name:"Keiko",
-            age:12,
-            gender:"Feale",
-            breed:"Akita",
-            service:"Grooming",
-            owners:"Daravy",
-            phone:"619-444-4444",
-        },
-
-        {
-            name:"Luna",
-            age:3,
-            gender:"Female",
-            breed:"German-Belgian Mix",
-            service:"Grooming",
-            owners:"Daravy",
-            phone:"619-444-4444",
-        },
-    ]
+    pets:[]
 }
-
-
-
-console.log(petSalon);
+// constructor
+function Pet(name,age,gender,breed,ownerName,contactPhone,service){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.owner = ownerName;
+    this.phone = contactPhone;
+    this.service = service;
+    
+}
 
 function displaySalonInfo(){
     document.getElementById("info").innerHTML =`
     <p>${petSalon.name} is located in ${petSalon.address.city}, ${petSalon.address.state}</p>`;
-
 }
-console.log(displaySalonInfo);
 
-function displayPetNames(){
-// use alert to display the amount of pets (alert(), length() is the hint
+let nameInput=document.getElementById("petName");
+let ageInput=document.getElementById("petAge");
+let genderInput=document.getElementById("petGender");
+let breedInput=document.getElementById("petBreed");
+let ownerInput=document.getElementById("petOwner");
+let contactInput=document.getElementById("petContact");
+let serviceSelector=document.getElementById("petService");
 
+function register(){
+    console.log(nameInput.value, ageInput.value,genderInput.value,breedInput.value, ownerInput.value, contactInput.value, serviceSelector.value);
+
+    let thePets=new Pet(nameInput.value, ageInput.value, genderInput.value, breedInput.value, ownerInput.value, contactInput.value, serviceSelector.value);
+    petSalon.pets.push(thePets);
+    console.log(petSalon.pets);
+    clearInputs();
 }
-alert(
-    "Number of registered pets is: " + petSalon.pets.length);
 
-// travel the pets array
-for(let i=0; i<petSalon.pets.length; i++){
-    console.log(petSalon.pets[i]);
+function clearInputs(){
+    nameInput.value="";
+    ageInput.value="";
+    genderInput.value="";
+    breedInput.value="";
+    ownerInput.value="";
+    contactInput.value="";
+    serviceSelector.value="";
+    
 }
-// display on the console
 
+function init(){
+    console.log("Registering");
+    displaySalonInfo();
 
+    let scooby = new Pet("Scooby",60,"Male", "Dane", "grooming", "Shaggy", "444-444-4444");
+    petSalon.pets.push(scooby);
 
-// displaySalonInfo();
+    let keiko = new Pet("Keiko", 13, "Female", "Akita", "grooming", "Daravy", "444-444-4444");
+    petSalon.pets.push(keiko);
+
+    let luna = new Pet("Luna", 3, "Female", "German-Belgian Mix", "Grooming", "Daravy", "444-444-4444");
+    petSalon.pets.push(luna);
+}
+
+window.onload=init;
