@@ -24,8 +24,7 @@ function Pet(name,age,gender,breed,ownerName,contactPhone,service){
 }
 
 function displaySalonInfo(){
-    document.getElementById("info").innerHTML =`
-    <p>${petSalon.name} is located in ${petSalon.address.city}, ${petSalon.address.state}</p>`;
+    
 }
 
 let nameInput=document.getElementById("petName");
@@ -36,13 +35,36 @@ let ownerInput=document.getElementById("petOwner");
 let contactInput=document.getElementById("petContact");
 let serviceSelector=document.getElementById("petService");
 
+function isValid(aPet){
+    let valid = true;
+
+    if(aPet.name =="" || aPet.service==""|| aPet.phone==""){
+        valid=false;
+    }
+
+    return valid;
+}
+
 function register(){
     console.log(nameInput.value, ageInput.value,genderInput.value,breedInput.value, ownerInput.value, contactInput.value, serviceSelector.value);
 
     let thePets=new Pet(nameInput.value, ageInput.value, genderInput.value, breedInput.value, ownerInput.value, contactInput.value, serviceSelector.value);
-    petSalon.pets.push(thePets);
-    console.log(petSalon.pets);
-    clearInputs();
+
+    if(isValid(thePets)){
+
+        petSalon.pets.push(thePets);
+
+        clearInputs();
+
+        displayPetTable();
+    
+    }
+
+    else{
+        alert("Please add the required information")
+    }
+
+    
 }
 
 function clearInputs(){
@@ -56,18 +78,21 @@ function clearInputs(){
     
 }
 
+
 function init(){
     console.log("Registering");
     displaySalonInfo();
 
-    let scooby = new Pet("Scooby",60,"Male", "Dane", "grooming", "Shaggy", "444-444-4444");
+    let scooby = new Pet("Scooby",60,"Male", "Dane","Shaggy", "444-444-4444","Grooming",);
     petSalon.pets.push(scooby);
 
-    let keiko = new Pet("Keiko", 13, "Female", "Akita", "grooming", "Daravy", "444-444-4444");
+    let keiko = new Pet("Keiko", 13, "Female", "Akita", "Daravy", "444-444-4444", "Grooming");
     petSalon.pets.push(keiko);
 
-    let luna = new Pet("Luna", 3, "Female", "German-Belgian Mix", "Grooming", "Daravy", "444-444-4444");
+    let luna = new Pet("Luna", 3, "Female", "German-Belgian Mix", "Daravy", "444-444-4444", "Grooming");
     petSalon.pets.push(luna);
+
+    displayPetTable();
 }
 
 window.onload=init;
