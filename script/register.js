@@ -12,6 +12,7 @@ let petSalon ={
     pets:[]
 }
 // constructor
+let c=0
 function Pet(name,age,gender,breed,ownerName,contactPhone,service){
     this.name = name;
     this.age = age;
@@ -20,6 +21,7 @@ function Pet(name,age,gender,breed,ownerName,contactPhone,service){
     this.owner = ownerName;
     this.phone = contactPhone;
     this.service = service;
+    this.id=c++;
     
 }
 
@@ -93,6 +95,41 @@ function init(){
     petSalon.pets.push(luna);
 
     displayPetTable();
+}
+
+function deletePet(id){
+    let removeIndex; 
+   
+    for(let i=0; i<petSalon.pets.length; i++) {
+
+        let pet = petSalon.pets[i];
+
+        if(pet.id==id){
+
+            removeIndex = i;
+        }
+    }
+    petSalon.pets.splice(removeIndex,1);
+
+    document.getElementById(id).remove();
+
+}
+
+function search (){
+    let searchString = document.getElementById("search").value;
+
+    let searchIndex;
+
+    for(let i=0; i<petSalon.pets.length; i++) {
+
+        let pet = petSalon.pets[i];
+
+        if(pet.name==searchString){
+    
+            searchString = i;
+        }
+    
+    }
 }
 
 window.onload=init;

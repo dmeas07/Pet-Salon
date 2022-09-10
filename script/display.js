@@ -15,7 +15,7 @@ function displayPetTable(){
                 <td>${pet.owner}</td>
                 <td>${pet.phone}</td>
                 <td>${pet.service}</td>
-               
+                <td><button onclick="deletePet(${pet.id})">❌</button></td>
             </tr>
         `;
         // insert the template into HTML

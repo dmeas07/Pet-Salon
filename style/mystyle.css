@@ -20,6 +20,13 @@ p{
     line-height: 1.5;
 }
 
+.container h2{
+    text-align: center;
+    font-weight: bolder;
+    color: #FFD700;
+    
+}
+
 .container{
     margin: 1rem auto;
     width: 70%;
@@ -31,10 +38,22 @@ header h1{
     font-weight: bolder;
     text-decoration: underline;
     text-align: left;
+    color: #FFD700;
+    text-shadow: 3px 3px black;
+}
+h6{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 40px;
 }
 
-nav {
-    margin-top: 2px;
+nav.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 100px;
+    padding: 5px 20px;
 }
 
 .btn{
@@ -44,4 +63,83 @@ nav {
 
 #petTable{
     margin-top: 4rem;
+}
+
+.search-bar{
+    text-align: center;
+   
+}
+
+a#home-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    color: black;
+}
+
+
+
+a#about-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    color: black;
+}
+
+a#services-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    color: black;
+}
+
+
+
+a#about-link{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+    color: black;
+}
+
+a#register-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    color: black;
+}
+
+.price{
+    text-align: right;
+    
+}
+
+.info-box{
+    text-align: center;
+}
+
+.menu-title{
+    font-size: 30px;
+    color: #FFD700;
+}
+.price{
+    font-size: 25px;
+}
+
+#social{
+    text-align: center;
+    padding-top: 100px;
+}
+.icons{
+    text-align: center;
+    font-size: 100px;
+    padding-bottom: 100px;
 }

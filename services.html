@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style/mystyle.css">
 
     <title>The Dog Father</title>
@@ -13,17 +16,21 @@
 <body>
 
     <header>
-
-        <h1>The Dog Father</h1>
-
-        <nav>
-
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="register.html">Register</a>
-
-        </nav>
+        <div class="container-header">
+            
+    
+            <nav class="menu">
+                <h1>The Dog Father Grooming</h1>
+                <div>
+                    <a href="index.html" 
+                    id="home-link">Home</a>
+                    <a href="about.html" 
+                    id="about-link">About</a>
+                    <a href="services.html" id="services-link">Services</a>
+                    <a href="register.html" id="register-link"><span>Register</span> </a>
+                </div>
+        
+            </nav>
 
     </header>
 
@@ -31,15 +38,84 @@
 
         <div class="container">
 
-            <h2>Services</h2>
+            <h2>Menu and Prices</h2>
 
+            <table>
+                <tr>
+                    <th>
+                        <p class="menu-title">Self Service</p> 
+                        <p class="menu-sub">You do the work, we provide you with everything and clean up!</p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="submenu-title">Self Serve</p>
+                        <p class="menu-description">30 minute slots</p>
+                        <p class="price">$20</p>
+
+                        <p class="submenu-title">Double Dog Discount</p>
+                        <p class="menu-description">Price per dog</p>
+                        <p class="price">$18</p>
+                        <hr>
+                    </td>
+                </tr>
+               
+                <tr>
+                    <th>
+                        <p class="menu-title">Grooming</p> 
+                        <p class="menu-sub">Includes bath, clip, nail trim, basic ear cleaning and anal glands if needed. Call for quote.</p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="submenu-title">Grooming</p>
+                        <!-- <p class="menu-description">30 minute slots</p> -->
+                        <p class="price">$Prices start at $65</p>
+
+                        <p class="submenu-title">Sanitary trim/touch-up
+                        </p>
+                        <p class="menu-description">Face, Feet, Fanny</p>
+                        <p class="price">$5 and up</p>
+                        <hr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <p class="menu-title">Avaiable Shampoos</p> 
+                        <p class="menu-sub">We offer a large selection of shampoos to cater to your dog's specific needs. We are proud to say we do not charge for upgrades.</p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="menu-description">Shampoo's Available</p>
+                        <li>Tropiclean Pure Plum Shampoo</li>
+                        <li>Mauro Original Shampoo</li>
+                        <li>Mauro Leave-in Conditiononer</li>
+                        <li>Furminator Shampoo</li>
+                            
+                    </td>
+                </tr>
+
+               </table>
+               <h6>Please note that your pets comfort if our first priority, if your pet becomes too stressed we reserve the right to stop the grooming at anytime.</h6>
 
         </div>
 
     </main>
 
     <footer>
-
+        <div class="info"></div>
+        <h1 id="social">Find us on:</h1>
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-yelp"></i>
+            </div>
     </footer>
 
     <script src="script/practice.js"></script>

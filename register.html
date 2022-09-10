@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style/mystyle.css">
 
@@ -16,24 +17,20 @@
 
     <header>
         <div class="container-header">
-            <h1>The Dog Father</h1>
+            
     
-            <nav>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="register.html">Register</a>
-                    </li>
-             </div>  
-        </nav>
+            <nav class="menu">
+                <h1>The Dog Father Grooming</h1>
+                <div>
+                    <a href="index.html" 
+                    id="home-link">Home</a>
+                    <a href="about.html" 
+                    id="about-link">About</a>
+                    <a href="services.html" id="services-link">Services</a>
+                    <a href="register.html" id="register-link"><span>Register</span> </a>
+                </div>
+        
+            </nav>
 
     </header>
 
@@ -87,6 +84,14 @@
             <button class="btn btn-primary" onclick="register();">Register</button>
         </div>
 
+        <div class="search-bar">
+
+            <input type="search" class="form=-control" id="search" placeholder="What am I fetching?">
+
+            <button class="btn btn-primary" onclick="search();">Go Fetch!</button>
+
+        </div>
+
         <table class="container table table-dark table-striped table table-hover">
             <thead>
                 <tr>
@@ -97,6 +102,7 @@
                     <th scope="col">Owner</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Service</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody id="petTable">
@@ -106,8 +112,15 @@
 
     </main>
 
-    <footer id="info">
-
+    <footer>
+        <div class="info"></div>
+        <h1 id="social">Find us on:</h1>
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-yelp"></i>
+            </div>
     </footer>
 
     <script src="script/display.js"></script>
